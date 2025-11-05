@@ -24,7 +24,7 @@
     }
 
     header .subnav {
-      font-size: 25px;
+      font-size: 20px;
       color: white;
       text-align: center;
     }
@@ -47,13 +47,13 @@
       margin-bottom: 30px;
     }
 
-    h2 {
-      font-size: 30px;
+    h3 {
+      font-size: 25px;
       color: #ffffff;
     }
 
-    h3 {
-      font-size: 25px;
+    h4 {
+      font-size: 20px;
       color: #2b7cff;
     }
 
@@ -130,20 +130,28 @@
       padding: 0;
     }
 
+    footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    }
+
 
   </style>
 </head>
 
 <body>
   <header>
-    <h2>Fake News e Desinformação</h2>
+    <h3>Fake News e Desinformação</h3>
     <p class="subnav">Entenda o impacto da desinformação e como combatê-la</p>
   </header>
 
   <div class="container">
     <main>
       <section>
-        <h3>O que são Fake News?</h3>
+        <h4>O que são Fake News?</h4>
         <p>O termo é usado para denominar informações falsas veiculadas, principalmente, nas redes sociais. Há casos de sensacionalismo para atrair acessos a sites e, assim, ganhar dinheiro com publicidade. As fake news também são usadas para reforçar um pensamento, por meio de mentiras e da disseminação de intolerâncias, destruindo pessoas, empresas ou afetando instituições democráticas, o que acontece, sobretudo, em períodos eleitorais. Trata-se de desinformação: sejam mentiras intencionais ou conteúdos não verificados. Opostas a notícias, misturam-se com elas, pondo em causa o debate livre e informativo.</p>
 
        <!-- <iframe class="video"  src="https://www.youtube.com/embed/HfkY0IYS52k" title="Fake News | Atualidades - Brasil Escola" frameborder="0" allowfullscreen></iframe> Retirado de dentro da classe: width="912" height="514" -->
@@ -158,7 +166,7 @@
       </section>
 
         <section class="section-centralizada">
-          <h3>Subtemas Importantes</h3>
+          <h4>Subtemas Importantes</h4>
           <ul>
             <li><a href="https://agenciabrasil.ebc.com.br/educacao/noticia/2024-05/educacao-midiatica-e-essencial-para-combater-desinformacao">Educação Midiática</a></li>
             
@@ -170,12 +178,12 @@
         </section>
 
       <section>
-        <h3 class="titulo-centralizado">Gráfico: Evolução das Fake News no Brasil</h2>
+        <h4 class="titulo-centralizado">Gráfico: Evolução das Fake News no Brasil</h4>
         <img src="https://cdn.statcdn.com/Infographic/images/normal/26394.jpeg" alt="Gráfico da evolução de fake news no Brasil">
       </section>
 
       <section class="verificador">
-        <h3>Verifique uma Notícia</h3>
+        <h4>Verifique uma Notícia</h4>
         <input type="text" id="urlNoticia" placeholder="Cole o link ou a notícia aqui...">
         <button onclick="verificarNoticia()">Verificar</button>
         <div id="resultado"></div>
@@ -195,7 +203,7 @@
 
     resultado.innerText = 'Analisando...';
 
-    const apiKey = '#'; // 🔒 Substitua por sua chave de API
+    const apiKey = 'AIzaSyC3jb2izWic_7N9FEOlYlNEZXtyEhcRkfA'; // 🔒 Substitua por sua chave de API
     const query = encodeURIComponent(url.replace('https://', '').replace('http://', ''));
     const apiUrl = `https://factchecktools.googleapis.com/v1alpha1/claims:search?query=${query}&key=${apiKey}`;
 
@@ -222,7 +230,10 @@
     }
   }
 </script>
-
+    <footer>
+        <p>&copy; 2025 EGO Solutions - Todos os direitos reservados.</p>
+        <br>
+    </footer>
 </body>
 
 </html>
