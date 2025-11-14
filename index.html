@@ -6,140 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fake News e Desinformação</title>
   <link rel="icon" href="fechadura.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background-color: #2b7cff;
-      color: white;
-      padding: 2px;
-      text-align: center;
-    }
-
-    header .subnav {
-      font-size: 20px;
-      color: white;
-      text-align: center;
-    }
-
-    .container {
-      width: 95%;
-      margin: 0 auto;
-      padding: 20px;
-      box-sizing: border-box;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    main {
-      padding: 0;
-    }
-
-    section {
-      margin-bottom: 30px;
-    }
-
-    h3 {
-      font-size: 25px;
-      color: #ffffff;
-    }
-
-    h4 {
-      font-size: 20px;
-      color: #2b7cff;
-    }
-
-    ul {
-      list-style-type: square;
-      margin-left: 20px;
-    }
-
-    img {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 10px auto;
-    }
-
-    .verificador {
-      margin-top: 30px;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    input {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    .verificador button  {
-      background-color: #2b7cff;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .verificador button:hover {
-      transform: scale(1.05);
-      background-color: #1f75ff;
-      color: white;
-    }
-
-
-    #resultado {
-      margin-top: 10px;
-    }
-
-    p {
-      text-align: justify;
-    }
-
-    .video {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      min-width: 50px;
-    }
-
-    .titulo-centralizado {
-      text-align: center;
-    }
-
-    .section-centralizada {
-      text-align: center;
-    }
-
-    .section-centralizada ul {
-      list-style-position: inside; /* Faz os marcadores ficarem dentro do bloco, centralizando melhor */
-      display: inline-block;       /* Faz a lista se comportar como um bloco centrado */
-      text-align: left;            /* Mantém o alinhamento dos itens da lista à esquerda dentro do bloco centralizado */
-      padding: 0;
-    }
-
-    footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-    }
-
-
-  </style>
 </head>
 
 <body>
@@ -230,6 +98,49 @@
     }
   }
 </script>
+
+<!-- Formulário de mensagem -->
+<section id="contato" style="margin:40px auto; max-width:500px; text-align:center;">
+  
+  <h4>Deixe sua mensagem ou sugestão</h4>
+  <form id="contact-form">
+    <textarea id="message" placeholder="Digite sua mensagem aqui..." required
+      style="width:85%; height:120px; padding:10px; border-radius:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);"></textarea>
+         
+      
+      <br><br>
+
+    <button class="enviar-mensagem" type="submit">Enviar mensagem</button>
+  </form>
+  
+  <p id="status" style="margin-top:10px; font-weight:bold;"></p>
+</section>
+
+<!-- Script do EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("SEU_USER_ID_AQUI"); // Substitua pelo seu USER ID
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const message = document.getElementById('message').value;
+
+    emailjs.send("SEU_SERVICE_ID_AQUI", "SEU_TEMPLATE_ID_AQUI", {
+      mensagem: message
+    })
+    .then(function() {
+      document.getElementById('status').innerText = "✅ Mensagem enviada com sucesso!";
+      document.getElementById('message').value = "";
+    }, function(error) {
+      document.getElementById('status').innerText = "❌ Erro ao enviar. Tente novamente.";
+      console.error("Erro:", error);
+    });
+  });
+</script>
+
     <footer>
         <p>&copy; 2025 EGO Solutions - Todos os direitos reservados.</p>
         <br>
