@@ -1,0 +1,65 @@
+<!-- Você está no caminho certo! A API que você pode usar no seu script para verificar fake news ou notícias checadas é a Google Fact Check Tools API, que pertence ao conjunto de APIs do Google News Initiative.
+
+✅ Nome da API correta:
+Fact Check Tools API (v1alpha1)
+Documentação oficial:
+👉 https://developers.google.com/fact-check/tools/api
+
+🔑 Como usar:
+Criar um projeto no Google Cloud Console:
+
+Acesse: https://console.cloud.google.com/
+Crie um novo projeto ou selecione um existente.
+
+Ativar a API:
+Vá até APIs e serviços > Biblioteca.
+Busque por Fact Check Tools API e ative-a.
+Criar uma chave de API:
+Vá em APIs e serviços > Credenciais > Criar credencial > Chave de API.
+Copie essa chave e cole no lugar de SUA_CHAVE_DE_API_AQUI no seu script.
+
+📌 Limitações e observações:
+A API não verifica diretamente se uma notícia é fake. Ela busca afirmações similares em bancos de dados de checagem de fatos (como PolitiFact, AFP, Full Fact, etc).
+Funciona melhor com frases ou trechos de afirmações textuais, em vez de URLs completas. -->
+
+
+<!-- Aqui está o passo a passo simples para você obter sua chave gratuita 👇
+
+🧭 1. Acesse o Google Cloud Console
+
+🔗 Vá para: https://console.cloud.google.com/
+Faça login com sua conta Google (Gmail).
+
+⚙️ 2. Crie um novo projeto
+Clique em “Selecionar projeto” → “Novo projeto”.
+Dê um nome, como verificador-fake-news.
+Clique em “Criar”.
+
+🔍 3. Ative a API de checagem de fatos
+No menu lateral, vá em APIs e serviços → Biblioteca.
+Pesquise por “Fact Check Tools API”.
+Clique nela e depois em “Ativar”.
+
+🔑 4. Crie a sua chave de API
+Vá em APIs e serviços → Credenciais.
+Clique em “Criar credenciais” → “Chave de API”.
+Copie a chave que aparecer (ela será algo como AIzaSy...).
+
+🧩 5. Cole sua chave no código No seu HTML, troque esta linha:
+
+const apiKey = 'SUA_CHAVE_DE_API_AQUI';
+por:
+const apiKey = 'SUA_CHAVE_REAL_AQUI';
+
+⚠️ 6. (Opcional) Proteja sua chave
+
+Para evitar que outras pessoas usem sua chave, limite-a:
+Ainda em Credenciais, clique no lápis da sua chave.
+Vá em Restrições de aplicação → Referenciadores HTTP.
+Adicione o domínio onde seu site estará hospedado (por exemplo, https://meusite.com ou http://localhost).
+
+💡 Dica de uso
+
+A API funciona melhor com frases curtas e claras, por exemplo:
+“A vacina contra Covid causa infertilidade.”
+Em vez de colar um link, cole a frase principal da notícia no campo de verificação. -->
