@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentação do Projeto - Fake News e Desinformação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-top: 30px;
+    }
+
+    code, pre {
+      background: #eaeaea;
+      padding: 10px;
+      border-radius: 5px;
+      display: block;
+      overflow-x: auto;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
+      background: #1e3a8a;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Documentação do Projeto: Fake News e Desinformação</h1>
+  <p>Guia completo de funcionamento do arquivo index.html</p>
+</header>
+
+<div class="container">
+  <h2>1. Descrição Geral</h2>
+  <p>
+    O arquivo <strong>index.html</strong> é a página principal do projeto "Fake News e Desinformação".
+    Ele contém um cabeçalho com imagem, seções informativas sobre fake news, um vídeo explicativo,
+    uma lista de subtemas importantes, um gráfico e uma ferramenta de verificação de notícias.
+  </p>
+
+  <h2>2. Estrutura do Arquivo</h2>
+  <h3>2.1 Cabeçalho</h3>
+  <p>Exibe uma imagem e o título principal do site.</p>
+
+  <pre><code>&lt;header&gt;
+  &lt;div class="container-imagem"&gt;
+    &lt;img src="fakenews.jpg" alt="fake news"&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Fake News e Desinformação&lt;/h3&gt;
+  &lt;p class="subnav"&gt;Entenda o impacto...&lt;/p&gt;
+&lt;/header&gt;</code></pre>
+
+  <h3>2.2 Seção "O que são Fake News?"</h3>
+  <p>
+    Explica o conceito de fake news e inclui um vídeo incorporado do YouTube.
+  </p>
+
+  <h3>2.3 Subtemas Importantes</h3>
+  <p>
+    Lista com links externos de artigos relevantes.
+  </p>
+
+  <h3>2.4 Gráfico</h3>
+  <p>
+    Exibe uma imagem contendo estatísticas sobre fake news no Brasil.
+  </p>
+
+  <h3>2.5 Verificador de Notícias</h3>
+  <p>
+    Esta seção permite que o usuário insira uma URL ou texto para verificar a veracidade.
+    Utiliza a API do <strong>Google Fact Check Tools</strong>.
+  </p>
+
+  <pre><code>async function verificarNoticia() {
+  const url = document.getElementById('urlNoticia').value;
+  const apiKey = 'SUA_API_KEY';
+  const apiUrl = `https://factchecktools.googleapis.com/v1alpha1/claims:search?...`;
+
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+}</code></pre>
+
+  <h2>3. Formulário de Mensagem (EmailJS)</h2>
+  <p>
+    Permite que o usuário envie mensagens diretamente para o seu e-mail.
+    É usado o serviço <strong>EmailJS</strong>.
+  </p>
+
+  <pre><code>emailjs.send("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", { mensagem: message })</code></pre>
+
+  <h2>4. Dependências Externas</h2>
+  <ul>
+    <li>Google Fact Check Tools API</li>
+    <li>EmailJS</li>
+    <li>YouTube Embed</li>
+  </ul>
+
+  <h2>5. Imagens Utilizadas</h2>
+  <ul>
+    <li><strong>fakenews.jpg</strong> – imagem do topo</li>
+    <li><strong>news.png</strong> – ícone do site</li>
+  </ul>
+
+  <h2>6. Arquivo CSS Externo</h2>
+  <p>O arquivo principal importa o estilo através de:</p>
+
+  <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+
+  <p>
+    A formatação visual geral do site, incluindo cores, espaçamentos e responsividade,
+    está definida no arquivo <strong>style.css</strong>.
+  </p>
+
+</div>
+
+<footer>
+  <p>Documentação gerada por EGO Solutions - 2025</p>
+</footer>
+
+</body>
+</html>
